@@ -38,7 +38,8 @@ body {
 
 h1,
 h3,
-h5 {
+h5,
+p {
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
         sans-serif;
     color: white;
@@ -88,4 +89,14 @@ h1 {
 }
 .img-m {
     padding: 0 0px 0 220px;
+}
+.img-f {
+    padding: 0 0px 0 800px;
+    cursor: pointer;
+}
+.box {
+    padding: 20px;
+    background-color: #181818;
+    width: 900px;
+    border-radius: 10px;
 }
