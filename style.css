@@ -73,13 +73,16 @@ h5 {
 
 .menu {
     grid-area: menu;
+    flex: 1;
 }
 .foto {
     grid-area: foto;
+    flex: 1;
 }
 .nome {
     grid-area: nome;
     padding: 0px 48px 0px 0px;
+    flex: 1;
 }
 .idade {
     grid-area: idade;
