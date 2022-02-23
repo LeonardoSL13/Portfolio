@@ -1,165 +1,247 @@
 * {
-    margin: 0;
-    box-sizing: border-box;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-    height: 100vh;
-    display: flex;
-    background-image: linear-gradient(to right, #17133a, #2b2142);
-    align-items: center;
+  height: 100vh;
+  display: flex;
+  background-image: linear-gradient(to right, #17133a, #2b2142);
+  align-items: center;
 }
 .container {
-    width: 100vw;
-    display: flex;
-    justify-content: center;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
 }
 .grid {
-    display: grid;
-    grid-template-areas:
-        "foto menu"
-        "nome menu"
-        "idade menu";
-    grid-template-columns: 1fr 300px;
+  display: grid;
+  grid-template-areas:
+    "foto menu"
+    "nome menu"
+    "idade menu";
+  grid-template-columns: 1fr 300px;
 }
 
 h1,
 h3,
 h5,
 p {
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-    color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: white;
 }
 h1 {
-    font-size: 42px;
+  font-size: 42px;
 }
 h3 {
-    font-size: 24px;
+  font-size: 24px;
 }
 h5 {
-    font-size: 20px;
+  font-size: 20px;
 }
 .button {
-    position: relative;
-    background-color: #03004d;
-    border: none;
-    border-radius: 10px;
-    color: #555555;
-    text-align: left;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 22px;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-    margin: 4px 0px 4px 0;
-    -webkit-transition-duration: 0.6s; /* Safari */
-    transition-duration: 0.6s;
-    cursor: pointer;
-    padding: 10px;
-    width: 300px;
-    height: 90px;
+  position: relative;
+  background-color: #03004d;
+  border: none;
+  border-radius: 10px;
+  color: #555555;
+  text-align: left;
+  display: inline-block;
+  font-size: 22px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: 4px 0px 4px 0;
+  -webkit-transition-duration: 0.6s; /* Safari */
+  transition-duration: 0.6s;
+  cursor: pointer;
+  padding: 10px;
+  width: 300px;
+  height: 90px;
 }
 
 .button1 {
-    background-color: #181818;
-    color: #9264b8;
-    border: 1px solid #363636;
+  background-color: #181818;
+  color: #9264b8;
+  border: 1px solid #363636;
 }
 .button1:hover {
-    background-color: #110d2d;
-    color: white;
+  background-color: #110d2d;
+  color: white;
 }
 
 .menu {
-    grid-area: menu;
-    flex: 1;
+  grid-area: menu;
+  flex: 1;
 }
 .foto {
-    grid-area: foto;
-    flex: 1;
+  grid-area: foto;
+  flex: 1;
 }
 .nome {
-    grid-area: nome;
-    padding: 0px 48px 0px 0px;
-    flex: 1;
+  grid-area: nome;
+  padding: 0px 48px 0px 0px;
+  flex: 1;
 }
 .idade {
-    grid-area: idade;
+  grid-area: idade;
 }
 
 .img1 {
-    background-color: #ddd;
-    border-radius: 100%;
-    height: 180px;
-    object-fit: cover;
-    width: 180px;
+  background-color: #ddd;
+  border-radius: 100%;
+  height: 180px;
+  object-fit: cover;
+  width: 180px;
 }
 
 .img-m {
-    position: absolute;
-    right: 10px;
-    top: 10px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }
 
 .img-f {
-    width: 28px;
-    height: 28px;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    cursor: pointer;
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
 }
 .box {
-    position: relative;
-    padding: 20px;
-    background-color: #181818;
-    width: 900px;
-    border-radius: 10px;
+  position: relative;
+  padding: 20px;
+  background-color: #181818;
+  width: 900px;
+  border-radius: 10px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+input {
+  position: absolute;
+  opacity: 0;
+  margin-top: 60vh;
+  cursor: pointer;
+}
+
+label {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: solid 2px white;
+  border-radius: 999px;
+  background-color: transparent;
+  margin: 60vh 6px 0 6px;
+  z-index: 2;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+input:checked + label {
+  background-color: white;
+}
+
+input:focus + label {
+  box-shadow: 0 0 0 2px teal, 0 0 18px white;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform: translateX(-100%);
+  transition-duration: 0.6s;
+  opacity: 1;
+}
+
+input:checked ~ .slide {
+  transform: translateX(100%);
+  opacity: 0;
+  visibility: hidden;
+}
+
+input:checked + label + .slide {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.item {
+  margin-top: 150px;
+  margin-left: 50px;
+}
+.item2 {
 }
 
 @media only screen and (max-width: 550px) {
-    .box {
-        padding: 20px;
-        background-color: #181818;
-        width: 90vw;
-        height: 90vh;
-        border-radius: 10px;
-    }
+  .item {
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 20px;
+  }
+  input {
+    position: absolute;
+    opacity: 0;
+    margin-top: 50vh;
+    cursor: pointer;
+  }
 
-    .menu {
-        padding: 30px 0px 0px 0px;
-        text-align: center;
-        grid-area: menu;
-    }
-    .foto {
-        display: flex;
-        justify-content: center;
-        grid-area: foto;
-    }
-    .nome {
-        padding: 0px 0px 0px 0px;
-        text-align: center;
-        grid-area: nome;
-    }
-    .idade {
-        text-align: center;
-        grid-area: idade;
-    }
-    body {
-        margin: 20px;
-        height: 100vh;
-        display: flex;
-        background-image: linear-gradient(to right, #17133a, #2b2142);
-        align-items: center;
-    }
-    .grid {
-        display: grid;
-        grid-template-areas:
-            "foto"
-            "nome"
-            "idade"
-            "menu";
-        grid-template-columns: 1fr;
-    }
+  label {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: solid 2px white;
+    border-radius: 999px;
+    background-color: transparent;
+    margin: 50vh 6px 0 6px;
+    z-index: 2;
+    cursor: pointer;
+    transition-duration: 0.4s;
+  }
+
+  .box {
+    padding: 20px;
+    background-color: #181818;
+    width: 90vw;
+    border-radius: 10px;
+  }
+
+  .menu {
+    padding: 30px 0px 0px 0px;
+    text-align: center;
+    grid-area: menu;
+  }
+  .foto {
+    display: flex;
+    justify-content: center;
+    grid-area: foto;
+  }
+  .nome {
+    padding: 0px 0px 0px 0px;
+    text-align: center;
+    grid-area: nome;
+  }
+  .idade {
+    text-align: center;
+    grid-area: idade;
+  }
+  body {
+    margin: 20px;
+    height: 100vh;
+    display: flex;
+    background-image: linear-gradient(to right, #17133a, #2b2142);
+    align-items: center;
+  }
+  .grid {
+    display: grid;
+    grid-template-areas:
+      "foto"
+      "nome"
+      "idade"
+      "menu";
+    grid-template-columns: 1fr;
+  }
 }
