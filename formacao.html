@@ -12,11 +12,18 @@
     <div class="container">
       <div class="box">
         <a href="index.html">
-          <img class="img-f" src="img/icons8-excluir-64.png" alt="" />
+          <img class="img-close" src="img/icons8-excluir-64.png" alt="" />
         </a>
         <h1>Formação</h1>
-
-        <input type="radio" id="trigger1" name="slider" />
+        <div class="button-slider">
+          <button onclick="nextSlider()" class="button button1 button2">
+            &lt
+          </button>
+          <button onclick="previousSlider()" class="button button1 button2">
+            &gt
+          </button>
+        </div>
+        <input type="radio" id="trigger1" name="slider" value="tragger1" />
         <label for="trigger1"></label>
         <div class="slide item1">
           <div class="item">
@@ -33,7 +40,14 @@
             </p>
           </div>
         </div>
-        <input type="radio" id="trigger2" name="slider" checked autofocus />
+        <input
+          type="radio"
+          id="trigger2"
+          name="slider"
+          value="tragger2"
+          checked
+          autofocus
+        />
         <label for="trigger2"></label>
         <div class="slide item2">
           <div class="item">
@@ -50,5 +64,6 @@
         </div>
       </div>
     </div>
+    <script src="scripts.js"></script>
   </body>
 </html>
