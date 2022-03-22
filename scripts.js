@@ -9,12 +9,12 @@ function nextSlider(){
   document.getElementById("trigger"+index).checked = true; 
   
 }
-function previousSlider(){
-  if(index===1){
-    index = lastItem;
-  }else{
-    index-- ;
-  }
-  document.getElementById("trigger"+index).checked = true; 
+// function previousSlider(){
+//   if(index===1){
+//     index = lastItem;
+//   }else{
+//     index-- ;
+//   }
+//   document.getElementById("trigger"+index).checked = true; 
  
-}
+// }
