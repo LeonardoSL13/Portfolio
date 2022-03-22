@@ -1,0 +1,14 @@
+.App {
+  height: 100vh;
+  display: flex;
+  background-image: linear-gradient(to right, #17133a, #2b2142);
+  align-items: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: white;
+  font-size: 18px;
+}
+.Container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
