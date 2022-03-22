@@ -7,7 +7,6 @@ type ButtonProps = {
 
 
 export function NavButton(Props: ButtonProps){
-
   return (
   <a href={Props.page}>
   <button className="button button1">
