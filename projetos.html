@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Leonardo Lopes</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <a href="index.html">
+          <img class="img-close" src="img/icons8-excluir-64.png" alt="" />
+        </a>
+        <h1>Projetos</h1>
+        <div class="button-slider">
+          <button onclick="nextSlider()" class="button button1 button2">
+            &lt
+          </button>
+          <button onclick="previousSlider()" class="button button1 button2">
+            &gt
+          </button>
+        </div>
+        <input
+          type="radio"
+          id="trigger1"
+          name="slider"
+          value="trigger1"
+          checked
+          autofocus
+        />
+        <label for="trigger1"></label>
+        <div class="slide">
+          <div class="item button1">
+            <a href="https://github.com/LeonardoSL13/feedget" target="_blank">
+              <h3>FeedGet</h3>
+              <p>
+                <br />
+                FEEDGET is a widget that is in the lower right corner of the
+                application, it allows the user to send feedback to developers
+                in a practical and simple way, in it you can send 3 types of
+                feedback: bug, idea and others. these feedbacks are sent to the
+                backend where they are stored and emailed to the devs.
+              </p>
+            </a>
+          </div>
+        </div>
+        <input type="radio" id="trigger2" name="slider" value="trigger2" />
+        <label for="trigger2"></label>
+        <div class="slide item2">
+          <div class="item">
+            <a href="https://github.com/LeonardoSL13/Faculdade" target="_blank">
+              <div>
+                <h3>Faculdade</h3>
+                <p>
+                  <br />
+                  Hi! I'm Leonardo and I'm 23 years old. I am currently studying
+                  technology in systems analysis and development at FAPI. Here
+                  is my files and algorithms used in college
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="scripts.js"></script>
+  </body>
+</html>

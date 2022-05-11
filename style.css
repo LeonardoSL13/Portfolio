@@ -17,8 +17,9 @@ body {
   display: flex;
   justify-content: center;
 }
- a {
+ a{
   text-decoration: none;
+  color: white
 }
 .grid {
   display: grid;
@@ -45,6 +46,7 @@ body {
   cursor: pointer;
   padding: 10px;
   width: 300px;
+  z-index: 2;
   height: 90px;
 }
 
@@ -76,6 +78,7 @@ body {
   padding: 0 20px;
   width: 100%;
   justify-content: space-between;
+ 
 }
 .menu {
   grid-area: menu;
@@ -115,6 +118,7 @@ body {
   right: 10px;
   top: 10px;
   cursor: pointer;
+  z-index: 2;
 }
 .box {
   position: relative;
@@ -131,6 +135,7 @@ input {
   opacity: 0;
   margin-top: 60vh;
   cursor: pointer;
+  z-index: 2;
 }
 
 label {
@@ -160,10 +165,13 @@ input:focus + label {
   height: 100%;
   top: 0;
   left: 0;
-  z-index: -1;
   transform: translateX(-100%);
   transition-duration: 0.6s;
   opacity: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 input:checked ~ .slide {
@@ -178,12 +186,43 @@ input:checked + label + .slide {
   visibility: visible;
 }
 
-.item {
-  margin-top: 150px;
-  margin-left: 70px;
+.item {  
+  width: 85%;  
+  padding: 20px;
+  border: 1px solid #9264b8;
+  border-radius: 10px; 
+  background-color: #181818;
+  color: white;
+  transition-duration: 0.6s;
+}
+.item:hover {  
+  background-color: #313131;
+  color: white  ;
+  
+}
+
+.techs{
+  justify-content: center ;
+  width: 40%;
+  align-items: center;
+  position: absolute  ;
+  right: 20px;
+  bottom: 200px;
+}
+.contato{
+  margin: 0 80px;
+  padding: 20px;
+  border-radius: 8px;  
+  border: white solid 1px;
+  justify-content: center ;
+  display: flex;
+  align-items: center;
 }
 
 @media only screen and (max-width: 550px) {
+  .techs{
+    position: static ;
+  }
   .item {
     position: absolute;
     margin-top: 100px;
@@ -274,4 +313,5 @@ input:checked + label + .slide {
       "menu";
     grid-template-columns: 1fr;
   }
+
 }
